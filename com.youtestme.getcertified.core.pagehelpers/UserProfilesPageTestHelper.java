@@ -54,21 +54,21 @@ public class UserProfilesPageTestHelper extends UserProfilesPage {
 		webDriverExtended.type(UserProfilesPage.INPUT_NEW_LAST_NAME, value);
 	}
 
-	public void typeBirth(String value) throws Exception {
+	/*public void typeBirth(String value) throws Exception {
 		webDriverExtended.type(UserProfilesPage.INPUT_NEW_BIRTH_DATE, value);
-	}
+	} */
 
-	public void selectGender(int option) throws Exception {
+	/*public void selectGender(int option) throws Exception {
 		webDriverExtended.selectFromOneMenu(UserProfilesPage.BASE_RADIO_GENDER_ID, option);
-	}
+	}*/
 
-	public void typeSemester(String value) throws Exception {
+	/*public void typeSemester(String value) throws Exception {
 		webDriverExtended.type(UserProfilesPage.INPUT_SEMESTER, value);
-	}
+	}*/
 
-	public void typeYear(String value) throws Exception {
+	/*public void typeYear(String value) throws Exception {
 		webDriverExtended.type(UserProfilesPage.INPUT_YEAR, value);
-	}
+	}*/
 
 	public void selectRole(int option) throws Exception {
 		webDriverExtended.selectFromOneMenu(UserProfilesPage.BASE_SELECT_ROLES, option);
@@ -83,7 +83,7 @@ public class UserProfilesPageTestHelper extends UserProfilesPage {
 	}
 
 	public void typePassExp(String value) throws Exception {
-		webDriverExtended.type(UserProfilesPage.INPUT_PASSWORD_EXPIRE, value);
+		webDriverExtended.type(UserProfilesPage.INPUT_PASSWORD_EXPIRES, value);
 	}
 
 	public void PressCreateUser() throws Exception {
@@ -96,6 +96,53 @@ public class UserProfilesPageTestHelper extends UserProfilesPage {
 		System.out.println("User check");
 		webDriverExtended.clickOnElement(UserProfilesPage.CHECK_USER);
 
+	}
+	public void updatePicture()throws Exception{
+		webDriverExtended.clickOnElement(UserProfilesPage.UPDATE_PROFILE_PICTURE);
+		
+	}
+	
+	public void basicInfo()throws Exception{
+		webDriverExtended.clickOnElement(UserProfilesPage.BASIC_INFO_ONLY);
+	}
+	
+	public void insertUsername(String value)throws Exception{
+		webDriverExtended.type(UserProfilesPage.INPUT_NEW_USERNAME,value);
+	}
+	
+	public void selectPasswordGenerated()throws Exception{
+		webDriverExtended.clickOnElement(UserProfilesPage.SELECT_PASSWORD);
+		webDriverExtended.clickOnElement(UserProfilesPage.SELECT_PASSWORD_GENERATED);
+		//webDriverExtended.clickOnElement(UserProfilesPage.SELECT_PASSWORD_MANUALLY);
+		Thread.sleep(2000);
+	}
+	
+	/*
+	 *public void selectPasswordManually()throws Exception{
+	 
+		webDriverExtended.clickOnElement(UserProfilesPage.SELECT_PASSWORD);
+		webDriverExtended.clickOnElement(UserProfilesPage.SELECT_PASSWORD_MANUALLY);
+		Thread.sleep(2000);
+	} */
+	
+	/*public void enterPassword(String value)throws Exception{
+		webDriverExtended.type(UserProfilesPage.ENTER_PASSWORD, value);
+		
+	}
+	
+	public void confirmPassword(String value)throws Exception{
+		webDriverExtended.type(UserProfilesPage.ENTER_PASSWORD, value);
+		
+	}*/
+	
+	public void selectRole()throws Exception{
+		webDriverExtended.clickOnElement(UserProfilesPage.SELECT_ROLE);
+		webDriverExtended.clickOnElement(UserProfilesPage.SELECT_ROLE_ADMIN);
+	}
+	
+	public void selectStatusActive ()throws Exception{
+		webDriverExtended.clickOnElement(UserProfilesPage.SELECT_USER_STATUS);
+		webDriverExtended.clickOnElement(UserProfilesPage.SELECT_USER_STATUS_ACTIVE);
 	}
 
 	// SHOW USERS
@@ -134,5 +181,6 @@ public class UserProfilesPageTestHelper extends UserProfilesPage {
 		webDriverExtended.type(UserProfilesPage.TYPE_ADDRESS, value);
 
 	}
-
+	
+	
 }
